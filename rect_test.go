@@ -22,3 +22,21 @@ func TestNewRectangle(t *testing.T) {
 		})
 	})
 }
+
+func TestPerimeter(t *testing.T) {
+	t.Run("check perimeter when length is equal to width", func(t *testing.T) {
+		assert.Equal(t, 6.4, NewRectangle(1.6, 1.6).FindPerimeter())
+	})
+
+	t.Run("check perimeter when length is equal to 1", func(t *testing.T) {
+		assert.Equal(t, 10.0, NewRectangle(1, 4.0).FindPerimeter())
+	})
+
+	t.Run("check perimeter when width is equal to 1", func(t *testing.T) {
+		assert.Equal(t, 3.0, NewRectangle(0.5, 1).FindPerimeter())
+	})
+
+	t.Run("check perimeter when length and width are not equal", func(t *testing.T) {
+		assert.Equal(t, 5.6, NewRectangle(2.0, 0.8).FindPerimeter())
+	})
+}
